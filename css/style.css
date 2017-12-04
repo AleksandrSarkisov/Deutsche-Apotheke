@@ -1,0 +1,149 @@
+body{
+	background-color: #0d316b;
+	color: #0d316b;
+	font-size: 14px;
+}
+
+.container{
+	background: #f4fff9;
+}
+
+a:hover{
+	background: #f4fff9;
+	text-decoration: none;
+}
+
+nav{
+	margin-bottom: 5px;
+}
+
+hr{
+	margin: 10px 0px 10px 0px;
+	border: 2px solid #0d316b;
+}
+
+h1{
+	text-align: center;
+}
+
+address{
+	text-align: left;
+	font-size: 14px;
+}
+
+/*	class	*/
+
+.menu {
+	background-color: #0d316b;
+	border: 1px solid #0d316b;
+	margin: 10px;
+	padding: 0;
+}
+
+.menu ul{
+	padding: 0;
+}
+
+.menu li {
+	float: left;
+}
+
+.menu li a{
+	display: block;
+	padding: 10px 15px; 
+	font-weight: bold;
+	font-size: 14px;
+	color: #fcfffd;
+}
+
+.menu li a:hover{
+	background-color: #f4fff9;
+	color: #0d316b;
+	border-radius: 0px;
+}
+
+.catalog{
+	border: 2px solid #b4eae3;
+	border-radius: 10px;
+	padding: 0;
+}
+
+.btn-group-vertical{
+	width: 100%;
+	padding: 0;
+}
+
+.btn{
+	background-color: inherit;
+	text-align: left;
+	color: #0d316b;
+	font-size: 16px;
+	border-top: 2px solid #b4eae3;
+	padding-left: 25px;
+}
+
+.btn:hover{
+	background-color: #b4eae3;
+}
+
+/*	id	*/
+
+#touch-menu{
+	padding: 5px;
+	display: none;
+}
+
+#logo{
+	margin-left: 15px;
+}
+
+#main{
+	display: flex;
+	align-items: flex-start;
+}
+
+#catalog{
+	display: none;
+	border: none;
+}
+
+#title{
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px;
+}
+
+#about{
+	text-align: center;
+	font-size: 16px;
+}
+
+#pay img{
+	margin: 20px 0px 20px 0px;
+}
+
+@media screen and (max-device-width: 680px){
+
+	.container_menu{
+		padding: 0;
+	}
+	
+	.nav{
+		margin: 0;
+	}
+
+	.nav-pills{
+		display: none;
+	}
+	
+	#touch-menu{
+		display: block;
+		background-color: #0d316b;
+		border: 1px solid #0d316b;
+		padding: 10px 15px; 
+		font-weight: bold;
+		font-size: 14px;
+		color: #fcfffd;
+		text-align: left;
+	}	
+}

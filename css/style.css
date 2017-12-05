@@ -40,28 +40,6 @@ address{
 	padding: 0;
 }
 
-.menu ul{
-	padding: 0;
-}
-
-.menu li {
-	float: left;
-}
-
-.menu li a{
-	display: block;
-	padding: 10px 15px; 
-	font-weight: bold;
-	font-size: 14px;
-	color: #fcfffd;
-}
-
-.menu li a:hover{
-	background-color: #f4fff9;
-	color: #0d316b;
-	border-radius: 0px;
-}
-
 .catalog{
 	border: 2px solid #b4eae3;
 	border-radius: 10px;
@@ -88,9 +66,59 @@ address{
 
 /*	id	*/
 
+#top{
+	background-color: #e8ebef;
+	bottom: 0;
+	display: none;
+	font-size: 150%;
+	position: fixed;
+	height: 100%;
+	width: 3%;
+	opacity: 0.5;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 20%;
+}
+
+#top span{
+	height: 100%;
+}
+
+#top:hover, {
+	filter: brightness(120%);
+}
+
+#top:hover span{
+	filter: brightness(50%);	
+}
+
 #touch-menu{
 	padding: 5px;
 	display: none;
+}
+
+#menu_list ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#menu_list li {
+	float: left;
+}
+
+#menu_list li a{
+	display: block;
+	padding: 10px 15px; 
+	font-weight: bold;
+	font-size: 14px;
+	color: #fcfffd;
+}
+
+#menu_list li a:hover{
+	background-color: #f4fff9;
+	color: #0d316b;
+	border-radius: 0px;
 }
 
 #logo{
@@ -105,6 +133,7 @@ address{
 #catalog{
 	display: none;
 	border: none;
+	float: right;
 }
 
 #title{
@@ -128,15 +157,16 @@ address{
 		padding: 0;
 	}
 	
-	.nav{
-		margin: 0;
+	#menu_list{
+		display:none;
 	}
 
-	.nav-pills{
-		display: none;
+	#menu_list li{
+		float: none;
 	}
-	
+
 	#touch-menu{
+		width: 100%;
 		display: block;
 		background-color: #0d316b;
 		border: 1px solid #0d316b;
@@ -146,4 +176,20 @@ address{
 		color: #fcfffd;
 		text-align: left;
 	}	
+}
+
+@media screen and (max-device-width: 600px){
+	#main{
+		flex-direction: column;
+	}
+
+	.catalog{
+		order: 2;
+	}
+
+	.carousel{
+		order: 1;
+		padding: 0;
+		margin-bottom: 10px;
+	}
 }

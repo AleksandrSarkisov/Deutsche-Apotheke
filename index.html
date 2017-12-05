@@ -7,7 +7,8 @@
 	
 	<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	
+	<link rel="stylesheet" href="fontAwesomeBootstrap/css/font-awesome.min.css">
+
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
@@ -18,35 +19,22 @@
 		<div class="row">
 			<nav class="menu nav">
 				<button id="touch-menu">Меню</button>
-				<ul>
-					<li><a href="#main">Главная</a></li>
-					<li><a href="#about">О компании</a></li>
-					<li><a href="#delivery">Доставка</a></li>
-					<li><a href="#pay">Способ оплаты</a></li>
-					<li><a href="#contacts">Контакты</a></li>
-					<li><a href="#reviews">Отзывы</a></li>
-				</ul>
+				<div id="menu_list">
+					<ul>
+						<li><a href="#main">Главная</a></li>
+						<li><a href="#about">О компании</a></li>
+						<li><a href="#delivery">Доставка</a></li>
+						<li><a href="#pay">Способ оплаты</a></li>
+						<li><a href="#contacts">Контакты</a></li>
+						<li><a href="#reviews">Отзывы</a></li>
+					</ul>
+				</div>
 			</nav>
-			<!--<div class="container container_menu">
-				<nav>
-					<div class="nav clearfix ">
-						<button id="touch-menu" class="col-xs-12">Меню</button>
-						<ul class="nav-pills col-sm-12 col-md-12 col-lg-12">
-							<li><a href="#main">Главная</a></li>
-							<li><a href="#about">О компании</a></li>
-							<li><a href="#delivery">Доставка</a></li>
-							<li><a href="#pay">Способ оплаты</a></li>
-							<li><a href="#contacts">Контакты</a></li>
-							<li><a href="#reviews">Отзывы</a></li>
-						</ul>
-					</div>
-				</nav>
-			</div>-->
-			<img id="logo" src="img/logo2.png" alt="">
+			<div><img id="logo" src="img/logo2.png" alt=""></div>
 			<div id="main" class="container">
 				<div class="catalog col-xs-4 col-sm-4 col-md-4 col-lg-4">
 					<div id="title">
-						Каталог <button id="catalog" class="btn pull-right"><span class="glyphicon glyphicon-align-justify"></span></button>
+						Каталог <button id="catalog" class="btn"><span class="pull-right glyphicon glyphicon-align-justify"></span></button>
 					</div>
 					<ul class="btn-group-vertical">
 						<button type="button" class="btn">Лекарства</button>
@@ -153,26 +141,39 @@
 			</div>
 		</div>
 	</div>
+	<div id="top"><span class="glyphicon glyphicon-circle-arrow-up fa-2x"></span></div>
 	<script type="text/javascript">
-		
-
-		/*$('a[href^="#"]').bind('click.smoothscroll',function (e) {
-			 e.preventDefault();
-			 
-			var target = this.hash,
-			 $target = $(target);
-			 
-			$('html, body').stop().animate({
-			 	'scrollTop': $target.offset().top
-			 }, 500, 'swing', function () {
-			 	window.location.hash = target;
-			 });
-		 });*/
+		var touch = $('#touch-menu');
+		var menu = $('.nav');
+		var wid = $(window).width();
+		var target = this.hash, $target = $(target);
+		var top_show = 150;
+		var delay = 1000;
 
 		$(document).ready(function(){
-			var touch = $('#touch-menu');
-			var menu = $('.nav');
-			var wid = $(window).width();
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > top_show)
+					$("#top").fadeIn();
+				else
+					$("#top").fadeOut();
+			});
+			$("#top").click(function(){
+				$("body, html").animate({
+					scrollTop: 0}, delay);
+				});
+
+			$('a[href^="#"]').bind('click.smoothscroll',function (e) {
+				e.preventDefault();
+				 
+				var target = this.hash,
+				$target = $(target);
+				 
+				$('html, body').stop().animate({'scrollTop': $target.offset().top}, 
+				500, 'swing', function () {
+					window.location.hash = target;
+				});
+			});
+			
 			$(window).resize(function(){
 				var wid = $(window).width();
 			});
@@ -181,9 +182,8 @@
 			
 			if(wid <= 768)
 			{
-				$("#main").css("align-items","flex-start");
 				$(".btn-group-vertical").hide();
-				$("#catalog").css("display", "block");
+				$("#catalog").css("display", "inline-block");
 				$("#catalog").click(function(){
 					$(".btn-group-vertical").slideToggle("slow");
 				});
@@ -197,7 +197,15 @@
 			if(wid <= 680)
 			{	
 				$("#touch-menu").click(function(){
+					$("#menu_list").slideToggle("#menu_list")
 				});
+			}
+
+			if(wid <= 600){
+				$(".catalog").removeClass("col-xs-4");
+				$(".catalog").addClass("col-xs-12");
+				$("#pay div img").removeClass("col-xs-3");
+				$("#pay div img").addClass("col-xs-6");
 			}	
 		});
 	</script>

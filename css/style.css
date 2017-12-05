@@ -97,6 +97,12 @@ address{
 	display: none;
 }
 
+#menu_list hr{
+	display: none;
+	border: 1px solid #151251;
+	margin: 0;
+}
+
 #menu_list ul{
 	list-style-type: none;
 	padding: 0;
@@ -159,6 +165,10 @@ address{
 	
 	#menu_list{
 		display:none;
+	}
+
+	#menu_list hr{
+		display: block;
 	}
 
 	#menu_list li{

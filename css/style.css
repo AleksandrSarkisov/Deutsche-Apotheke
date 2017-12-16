@@ -46,6 +46,10 @@ address{
 	padding: 0;
 }
 
+.carousel-inner{
+	margin-bottom: 10px;
+}
+
 .btn-group-vertical{
 	width: 100%;
 	padding: 0;
@@ -155,6 +159,23 @@ address{
 
 #pay img{
 	margin: 20px 0px 20px 0px;
+}
+
+#search{
+	display: inline-block;
+	float: right;
+	padding-right: 15px;
+}
+
+#search input{
+	padding: 5px;
+}
+
+#search button{
+	padding: 0px;
+}
+
+#search button img{
 }
 
 @media screen and (max-device-width: 680px){

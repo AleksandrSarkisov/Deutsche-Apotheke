@@ -4,9 +4,6 @@ body{
 	font-size: 14px;
 }
 
-.container{
-	background: #f4fff9;
-}
 
 a:hover{
 	background: #f4fff9;
@@ -32,6 +29,10 @@ address{
 }
 
 /*	class	*/
+
+.container{
+	background: #f4fff9;
+}
 
 .menu {
 	background-color: #0d316b;
@@ -130,6 +131,37 @@ address{
 	color: #0d316b;
 	border-radius: 0px;
 }
+
+#menu-list hr{
+	display: none;
+	border: 1px solid #151251;
+	margin: 0;
+}
+
+#menu-list ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#menu-list li {
+	float: left;
+}
+
+#menu-list li a{
+	display: block;
+	padding: 10px 15px; 
+	font-weight: bold;
+	font-size: 14px;
+	color: #fcfffd;
+}
+
+#menu-list li a:hover{
+	background-color: #f4fff9;
+	color: #0d316b;
+	border-radius: 0px;
+}
+
 
 #logo{
 	margin-left: 15px;

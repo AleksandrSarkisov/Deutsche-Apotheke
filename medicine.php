@@ -54,9 +54,12 @@
 								echo '
 									<div class="product">
 										<img src="catalog/'.$row["img"].'">
-                                        <strong>'.$row["title"].'</strong>
-                                        <strong>'.$row["rus_title"].'</strong>
-                                        <strong>'.$row["count"].'&emsp;'.$row["price"].'&#x20ac;</strong>
+                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                        <div class="product_count_price">
+                                            <strong>'.$row["count"].'</strong>
+                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                        </div>
 									</div>
 								';
 							}

@@ -71,14 +71,15 @@ address{
 
 .block_products{
 	display: flex;
+	align-items: baseline;
 	justify-content: center;
 	flex-wrap: wrap;
+
 }
 
 .product{
-	display: inline-flex;
+	display: flex;
 	flex-direction: column;
-	padding: 0px 15px;
 	margin: 10px 0px; 
 	align-items: center;
 	width: 25%;
@@ -88,12 +89,18 @@ address{
 	width: 130px;
 }
 
-.product .count{
-	float: left;
+.product_title{
+	text-align: center;
 }
 
-.product .price{
-	float: right;
+.product_rus_title{
+	text-align: center;
+}
+
+.product_count_price{
+	width: 75%;
+	display: flex;
+	justify-content: space-around;
 }
 
 /*	id	*/
@@ -233,8 +240,7 @@ address{
 
 #search input{
 	padding: 5px;
-	margin-right: -2px;
-	outline: none;
+	margin-right: -5px;
 }
 
 #search button{

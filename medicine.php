@@ -43,11 +43,7 @@
         <hr>
         <div id="medications">
             <h1>Лекарства</h1>
-<<<<<<< HEAD
-            <div>
-=======
             <div class="block_products">
->>>>>>> feature/connect-db
                 <?php
                     $result = mysql_query("SELECT * FROM table_products WHERE category = 'medication'", $link);
 						if(mysql_num_rows($result) > 0)
@@ -56,16 +52,12 @@
 							do
 							{
 								echo '
-<<<<<<< HEAD
-									<h4>'.$row["title"].'</h4>
-=======
 									<div class="product">
 										<img src="catalog/'.$row["img"].'">
                                         <strong>'.$row["title"].'</strong>
                                         <strong>'.$row["rus_title"].'</strong>
                                         <strong>'.$row["count"].'&emsp;'.$row["price"].'&#x20ac;</strong>
 									</div>
->>>>>>> feature/connect-db
 								';
 							}
 							while ($row = mysql_fetch_array($result));
@@ -80,44 +72,28 @@
         <hr>
         <div id="vitamin">
             <h1>Витамины</h1>
-<<<<<<< HEAD
-            <div>
-=======
             <div class="block_products">
->>>>>>> feature/connect-db
 
             </div>
         </div>
         <hr>
         <div id="gestation">
             <h1>Беременность</h1>
-<<<<<<< HEAD
-            <div>
-=======
             <div class="block_products">
->>>>>>> feature/connect-db
 
             </div>
         </div>
         <hr>
         <div id="doppelherz">
             <h1>Doppelherz</h1>
-<<<<<<< HEAD
-            <div>
-=======
             <div class="block_products">
->>>>>>> feature/connect-db
 
             </div>
         </div>
         <hr>
         <div id="for_kids">
             <h1>Для детей</h1>
-<<<<<<< HEAD
-            <div>
-=======
             <div class="block_products">
->>>>>>> feature/connect-db
 
             </div>
         </div>

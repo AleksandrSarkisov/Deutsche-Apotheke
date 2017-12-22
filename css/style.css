@@ -74,19 +74,26 @@ address{
 	align-items: baseline;
 	justify-content: center;
 	flex-wrap: wrap;
-
 }
 
 .product{
 	display: flex;
 	flex-direction: column;
-	margin: 10px 0px; 
+	margin: 15px 0px; 
+	padding: 5px;
 	align-items: center;
-	width: 25%;
+	width: 23%;
+}
+
+.product:hover{
+	border: 2px solid #b4eae3;
+	border-radius: 10px;
+	box-shadow: 0 0 50px rgba(0,0,0,1);
+	background-color: #c3d2ca;
 }
 
 .product img{
-	width: 130px;
+	width: 178px;
 }
 
 .product_title{

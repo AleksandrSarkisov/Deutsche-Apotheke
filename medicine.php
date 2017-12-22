@@ -65,10 +65,6 @@
 							}
 							while ($row = mysql_fetch_array($result));
 						}
-						else
-						{
-
-						}
 				?>
             </div>
         </div>
@@ -76,28 +72,112 @@
         <div id="vitamin">
             <h1>Витамины</h1>
             <div class="block_products">
-
+                <?php
+                    $result = mysql_query("SELECT * FROM table_products WHERE category = 'vitamin'", $link);
+                        if(mysql_num_rows($result) > 0)
+                        {
+                            $row = mysql_fetch_array($result);
+                            do
+                            {
+                                echo '
+                                    <div class="product">
+                                        <img src="catalog/'.$row["img"].'">
+                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                        <div class="product_count_price">
+                                            <strong>'.$row["count"].'</strong>
+                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                        </div>
+                                    </div>
+                                ';
+                            }
+                            while ($row = mysql_fetch_array($result));
+                        }
+                ?>
             </div>
         </div>
         <hr>
         <div id="gestation">
             <h1>Беременность</h1>
             <div class="block_products">
-
+                <?php
+                    $result = mysql_query("SELECT * FROM table_products WHERE category = 'gestation'", $link);
+                        if(mysql_num_rows($result) > 0)
+                        {
+                            $row = mysql_fetch_array($result);
+                            do
+                            {
+                                echo '
+                                    <div class="product">
+                                        <img src="catalog/'.$row["img"].'">
+                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                        <div class="product_count_price">
+                                            <strong>'.$row["count"].'</strong>
+                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                        </div>
+                                    </div>
+                                ';
+                            }
+                            while ($row = mysql_fetch_array($result));
+                        }
+                ?>
             </div>
         </div>
         <hr>
         <div id="doppelherz">
             <h1>Doppelherz</h1>
             <div class="block_products">
-
+                <?php
+                    $result = mysql_query("SELECT * FROM table_products WHERE category = 'doppelherz'", $link);
+                        if(mysql_num_rows($result) > 0)
+                        {
+                            $row = mysql_fetch_array($result);
+                            do
+                            {
+                                echo '
+                                    <div class="product">
+                                        <img src="catalog/'.$row["img"].'">
+                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                        <div class="product_count_price">
+                                            <strong>'.$row["count"].'</strong>
+                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                        </div>
+                                    </div>
+                                ';
+                            }
+                            while ($row = mysql_fetch_array($result));
+                        }
+                ?>
             </div>
         </div>
         <hr>
         <div id="for_kids">
             <h1>Для детей</h1>
             <div class="block_products">
-
+                <?php
+                    $result = mysql_query("SELECT * FROM table_products WHERE category = 'for_kids'", $link);
+                        if(mysql_num_rows($result) > 0)
+                        {
+                            $row = mysql_fetch_array($result);
+                            do
+                            {
+                                echo '
+                                    <div class="product">
+                                        <img src="catalog/'.$row["img"].'">
+                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                        <div class="product_count_price">
+                                            <strong>'.$row["count"].'</strong>
+                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                        </div>
+                                    </div>
+                                ';
+                            }
+                            while ($row = mysql_fetch_array($result));
+                        }
+                ?>
             </div>
         </div>
     </div>

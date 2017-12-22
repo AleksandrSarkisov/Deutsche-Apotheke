@@ -69,6 +69,33 @@ address{
 	background-color: #b4eae3;
 }
 
+.block_products{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.product{
+	display: inline-flex;
+	flex-direction: column;
+	padding: 0px 15px;
+	margin: 10px 0px; 
+	align-items: center;
+	width: 25%;
+}
+
+.product img{
+	width: 130px;
+}
+
+.product .count{
+	float: left;
+}
+
+.product .price{
+	float: right;
+}
+
 /*	id	*/
 
 #top{

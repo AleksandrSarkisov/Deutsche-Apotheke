@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine</title>
+    
+    <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -46,26 +48,26 @@
             <div class="block_products">
                 <?php
                     $result = mysql_query("SELECT * FROM table_products WHERE category = 'medication'", $link);
-						if(mysql_num_rows($result) > 0)
-						{
-							$row = mysql_fetch_array($result);
-							do
-							{
-								echo '
-									<div class="product">
-										<img src="catalog/'.$row["img"].'">
+                        if(mysql_num_rows($result) > 0)
+                        {
+                            $row = mysql_fetch_array($result);
+                            do
+                            {
+                                echo '
+                                    <div class="product">
+                                        <img src="catalog/'.$row["img"].'">
                                         <strong class="product_title">'.$row["title"].'</strong>
                                         <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                         <div class="product_count_price">
                                             <strong>'.$row["count"].'</strong>
                                             <strong>'.$row["price"].'&#x20ac;</strong>
                                         </div>
-									</div>
-								';
-							}
-							while ($row = mysql_fetch_array($result));
-						}
-				?>
+                                    </div>
+                                ';
+                            }
+                            while ($row = mysql_fetch_array($result));
+                        }
+                ?>
             </div>
         </div>
         <hr>
@@ -154,7 +156,7 @@
         </div>
         <hr>
         <div id="for_kids">
-            <h1>Для детей</h1>
+            <h1>Для детей/h1>
             <div class="block_products">
                 <?php
                     $result = mysql_query("SELECT * FROM table_products WHERE category = 'for_kids'", $link);
@@ -182,5 +184,20 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('a[href^="#"]').bind('click.smoothscroll',function (e) {
+            e.preventDefault();
+                 
+            var target = this.hash,
+            $target = $(target);
+                 
+            $('html, body').stop().animate({'scrollTop': $target.offset().top}, 
+                500, 'swing', function () {
+                    window.location.hash = target;
+            });
+        });    
+    });
+</script>
 </body>
 </html>

@@ -1,20 +1,24 @@
 <?php
     include("include/db_connect.php");
+    header('Content-Type: text/html; charset=utf-8');
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="windows-1251">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine</title>
-    
+
     <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
     <script src="dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/shop-script.js"></script>
+    <script type="text/javascript" src="js/TextChange.js"></script>
 </head>
 <body>
 <div class="container">
@@ -37,10 +41,15 @@
         </nav>
         <div id="header">
             <img id="logo" src="img/logo2.png" alt="">
-            <form id="search">
-                <input type="text" name="" placeholder="Поиск товара">
-                <button><img src="img/search-icon.png"></button>
-            </form>
+            <div id="block_search">
+                <form id="search" method="GET" action="search.php?q=">
+                    <input id="input_search" type="text" name="q" placeholder="Поиск товара">
+                    <button><img src="img/search-icon.png"></button>
+                </form>
+                <ul id="result_search">
+                    
+                </ul>
+            </div>
         </div>
         <hr>
         <div id="medications">
@@ -56,11 +65,11 @@
                                 echo '
                                     <div class="product">
                                         <img src="catalog/'.$row["img"].'">
-                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
                                         <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                         <div class="product_count_price">
-                                            <strong>'.$row["count"].'</strong>
-                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                            <strong>'.$row["mini_description"].'</strong>
+                                            <strong>'.$row["price"].'</strong>
                                         </div>
                                     </div>
                                 ';
@@ -84,11 +93,11 @@
                                 echo '
                                     <div class="product">
                                         <img src="catalog/'.$row["img"].'">
-                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
                                         <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                         <div class="product_count_price">
-                                            <strong>'.$row["count"].'</strong>
-                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                            <strong>'.$row["mini_description"].'</strong>
+                                            <strong>'.$row["price"].'</strong>
                                         </div>
                                     </div>
                                 ';
@@ -112,11 +121,11 @@
                                 echo '
                                     <div class="product">
                                         <img src="catalog/'.$row["img"].'">
-                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
                                         <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                         <div class="product_count_price">
-                                            <strong>'.$row["count"].'</strong>
-                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                            <strong>'.$row["mini_description"].'</strong>
+                                            <strong>'.$row["price"].'</strong>
                                         </div>
                                     </div>
                                 ';
@@ -140,11 +149,11 @@
                                 echo '
                                     <div class="product">
                                         <img src="catalog/'.$row["img"].'">
-                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
                                         <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                         <div class="product_count_price">
-                                            <strong>'.$row["count"].'</strong>
-                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                            <strong>'.$row["mini_description"].'</strong>
+                                            <strong>'.$row["price"].'</strong>
                                         </div>
                                     </div>
                                 ';
@@ -156,7 +165,7 @@
         </div>
         <hr>
         <div id="for_kids">
-            <h1>Для детей/h1>
+            <h1>Для детей<h1>
             <div class="block_products">
                 <?php
                     $result = mysql_query("SELECT * FROM table_products WHERE category = 'for_kids'", $link);
@@ -168,11 +177,11 @@
                                 echo '
                                     <div class="product">
                                         <img src="catalog/'.$row["img"].'">
-                                        <strong class="product_title">'.$row["title"].'</strong>
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
                                         <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                         <div class="product_count_price">
-                                            <strong>'.$row["count"].'</strong>
-                                            <strong>'.$row["price"].'&#x20ac;</strong>
+                                            <strong>'.$row["mini_description"].'</strong>
+                                            <strong>'.$row["price"].'</strong>
                                         </div>
                                     </div>
                                 ';
@@ -184,20 +193,5 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('a[href^="#"]').bind('click.smoothscroll',function (e) {
-            e.preventDefault();
-                 
-            var target = this.hash,
-            $target = $(target);
-                 
-            $('html, body').stop().animate({'scrollTop': $target.offset().top}, 
-                500, 'swing', function () {
-                    window.location.hash = target;
-            });
-        });    
-    });
-</script>
 </body>
 </html>

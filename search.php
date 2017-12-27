@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicine Поиск - <?php echo $search; ?></title>
+    <title>Medicine ???- <?php echo $search; ?></title>
 
     <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
@@ -27,22 +27,22 @@
             <div id="menu-list">
                 <ul>
                     <hr>
-                    <li><a href="#medications">Лекарства</a></li>
+                    <li><a href="#medications">Р›РµРєР°СЂСЃС‚РІР°</a></li>
                     <hr>
-                    <li><a href="#vitamin">Витамины</a></li>
+                    <li><a href="#vitamin">Р’РёС‚Р°РјРёРЅС‹</a></li>
                     <hr>
-                    <li><a href="#gestation">Беременность</a></li>
+                    <li><a href="#gestation">Р‘РµСЂРµРјРµРЅРЅРѕСЃС‚СЊ</a></li>
                     <hr>
                     <li><a href="#doppelherz">Doppelherz</a></li>
                     <hr>
-                    <li><a href="#for_kids">Для детей</a></li>
+                    <li><a href="#for_kids">Р”Р»СЏ РґРµС‚РµР№/a></li>
                 </ul>
             </div>
         </nav>
         <div id="header">
             <img id="logo" src="img/logo2.png" alt="">
             <form id="search" method="GET" action="search.php?q=">
-                <input type="text" name="q" placeholder="Поиск товара" value="<?php echo $search; ?>">
+                <input type="text" name="q" placeholder="РџРѕРёСЃРє С‚РѕРІР°СЂР°" value="<?php echo $search; ?>">
                 <button><img src="img/search-icon.png"></button>
             </form>
         </div>
@@ -71,7 +71,7 @@
                         while($row = mysql_fetch_array($result));
                     } else
                     {
-                        echo '<h3>По Вашему запросу товары не найдены. Проверьте правильность вводимого товара.</h3>';
+                        echo '<h3>? ??????????? ? ????. ????? ??????? ????????.</h3>';
                     }
                 ?>
             </div>

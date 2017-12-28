@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="windows-1251">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine</title>
 
@@ -69,7 +69,7 @@
                                         <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                         <div class="product_count_price">
                                             <strong>'.$row["mini_description"].'</strong>
-                                            <strong>'.$row["price"].'</strong>
+                                            <strong>'.$row["price"].'&#8364;</strong>
                                         </div>
                                     </div>
                                 ';

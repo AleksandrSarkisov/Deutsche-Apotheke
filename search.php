@@ -2,6 +2,7 @@
     include("include/db_connect.php");
     include("functions/functions.php");
 
+    header('Content-Type: text/html; charset=utf-8');
     $search = clear_string($_GET["q"]);
 ?>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medicine ???- <?php echo $search; ?></title>
+    <title>Поиск - <?php echo $search; ?></title>
 
     <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
@@ -35,7 +36,7 @@
                     <hr>
                     <li><a href="#doppelherz">Doppelherz</a></li>
                     <hr>
-                    <li><a href="#for_kids">Для детей/a></li>
+                    <li><a href="#for_kids">Для детей</a></li>
                 </ul>
             </div>
         </nav>
@@ -63,7 +64,7 @@
                                     <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                     <div class="product_count_price">
                                         <strong>'.$row["mini_description"].'</strong>
-                                        <strong>'.$row["price"].'</strong>
+                                        <strong>'.$row["price"].'&#8364;</strong>
                                     </div>
                                 </div>
                             ';
@@ -71,7 +72,7 @@
                         while($row = mysql_fetch_array($result));
                     } else
                     {
-                        echo '<h3>? ??????????? ? ????. ????? ??????? ????????.</h3>';
+                        echo '<h3>По Вашему запросу товаров не найдена. Проверьте коррекность вводимого товара.</h3>';
                     }
                 ?>
             </div>

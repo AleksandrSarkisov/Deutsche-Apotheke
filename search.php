@@ -15,10 +15,12 @@
     <link rel="icon" type="image/png" href="img/icon.png">
     <link rel="stylesheet" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>
     <script src="dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/shop-script.js"></script>
     <script type="text/javascript" src="js/TextChange.js"></script>
 </head>
 <body>
@@ -28,24 +30,29 @@
             <div id="menu-list">
                 <ul>
                     <hr>
-                    <li><a href="#medications">Лекарства</a></li>
+                    <li><a href="medicine.php#medications">Лекарства</a></li>
                     <hr>
-                    <li><a href="#vitamin">Витамины</a></li>
+                    <li><a href="medicine.php#vitamin">Витамины</a></li>
                     <hr>
-                    <li><a href="#gestation">Беременность</a></li>
+                    <li><a href="medicine.php#gestation">Беременность</a></li>
                     <hr>
-                    <li><a href="#doppelherz">Doppelherz</a></li>
+                    <li><a href="medicine.php#doppelherz">Doppelherz</a></li>
                     <hr>
-                    <li><a href="#for_kids">Для детей</a></li>
+                    <li><a href="medicine.php#for_kids">Для детей</a></li>
                 </ul>
             </div>
         </nav>
         <div id="header">
             <img id="logo" src="img/logo2.png" alt="">
-            <form id="search" method="GET" action="search.php?q=">
-                <input type="text" name="q" placeholder="Поиск товара" value="<?php echo $search; ?>">
-                <button><img src="img/search-icon.png"></button>
-            </form>
+            <div id="block-header">
+                <form id="search" method="GET" action="search.php?q=" autocomplete="off">
+                    <input id="input_search" type="text" name="q" placeholder="Поиск товара" value="<?php echo $search; ?>">
+                    <button><img src="img/search-icon.png"></button>
+                </form>
+                <ul id="result-search">
+                        
+                </ul>
+            </div>
         </div>
         <hr>
         <div id="search-products">
@@ -57,17 +64,42 @@
                         $row = mysql_fetch_array($result);
                         do
                         {
-                            echo '
-                                <div class="product">
-                                    <img src="catalog/'.$row["img"].'">
-                                    <strong class="product_title">'.$row["ger_title"].'</strong>
-                                    <strong class="product_rus_title">'.$row["rus_title"].'</strong>
-                                    <div class="product_count_price">
-                                        <strong>'.$row["mini_description"].'</strong>
-                                        <strong>'.$row["price"].'&#8364;</strong>
+                            if($row["rus_title"]){
+                                echo '
+                                    <div class="product">
+                                        <img src="catalog/'.$row["img"].'">
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
+                                        <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                        <div class="product_count_price">
+                                            <strong class="count">'.$row["mini_description"].'</strong>
+                                            <strong class="price">'.$row["price"].'&#8364;</strong>
+                                        </div>
+                                        <div class="btn_cart">
+                                            <button type="button" class="btn btn-primary btn-lg">
+                                                <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                            ';
+                                ';
+                            }
+                            else{
+                                echo '
+                                    <div class="product">
+                                        <img src="catalog/'.$row["img"].'">
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
+                                        <br>
+                                        <div class="product_count_price">
+                                            <strong class="count">'.$row["mini_description"].'</strong>
+                                            <strong class="price">'.$row["price"].'&#8364;</strong>
+                                        </div>
+                                        <div class="btn_cart">
+                                            <button type="button" class="btn btn-primary btn-lg">
+                                                <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
+                                            </button>
+                                        </div>
+                                    </div>
+                                ';
+                            }
                         }
                         while($row = mysql_fetch_array($result));
                     } else

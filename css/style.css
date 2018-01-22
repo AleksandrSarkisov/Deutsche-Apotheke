@@ -4,7 +4,6 @@ body{
 	font-size: 14px;
 }
 
-
 a:hover{
 	background: #f4fff9;
 	text-decoration: none;
@@ -44,6 +43,8 @@ address{
 .catalog{
 	border: 2px solid #b4eae3;
 	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 	padding: 0;
 }
 
@@ -54,19 +55,33 @@ address{
 .btn-group-vertical{
 	width: 100%;
 	padding: 0;
+	margin-bottom: 0;
 }
 
-.btn{
+.catalog .btn{
 	background-color: inherit;
 	text-align: left;
 	color: #0d316b;
 	font-size: 16px;
 	border-top: 2px solid #b4eae3;
-	padding-left: 25px;
+	padding: 0;
 }
 
-.btn:hover{
+.catalog .btn:hover{
 	background-color: #b4eae3;
+}
+
+.catalog .btn a{
+	display: block;
+	text-decoration: none;
+	color: #0d316b;	
+	width: 100%;
+	padding: 5px 0 5px 25px;
+}
+
+.catalog .btn a:hover{
+	background-color: #b4eae3;
+	color: #0d316b;
 }
 
 .block_products{
@@ -83,11 +98,13 @@ address{
 	padding: 5px;
 	align-items: center;
 	width: 23%;
+	height: 100%;
 }
 
 .product:hover{
-	border: 2px solid #b4eae3;
 	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
 	box-shadow: 0 0 50px rgba(0,0,0,1);
 	background-color: #c3d2ca;
 }
@@ -107,7 +124,24 @@ address{
 .product_count_price{
 	width: 75%;
 	display: flex;
-	justify-content: space-around;
+	align-items: flex-end;
+}
+
+.count{
+	width: 65%;
+	height: 40px;
+	text-align: left;
+}
+
+.price{
+	width: 35%;
+	text-align: right;
+	height: 40px;
+}
+
+.product .btn_cart{
+	width: 80%;
+	text-align: center;
 }
 
 /*	id	*/
@@ -119,7 +153,6 @@ address{
 	font-size: 150%;
 	position: fixed;
 	height: 100%;
-	width: 3%;
 	opacity: 0.5;
 	text-align: center;
 	vertical-align: middle;
@@ -171,6 +204,8 @@ address{
 	background-color: #f4fff9;
 	color: #0d316b;
 	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
 }
 
 #menu-list hr{
@@ -201,6 +236,8 @@ address{
 	background-color: #f4fff9;
 	color: #0d316b;
 	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
 }
 
 
@@ -225,6 +262,19 @@ address{
 	margin: 10px;
 }
 
+#title a{
+	color: #0d316b;
+	display: block;
+}
+
+#title a:hover{
+	cursor: pointer;
+}
+
+#title span{
+	margin-top: 5px;
+}
+
 #about{
 	text-align: center;
 	font-size: 16px;
@@ -240,22 +290,67 @@ address{
 	justify-content: space-between;
 }
 
+#block-header{
+	display: flex;
+	flex-direction: column;
+}
+
 #search{
 	display: inline-flex;
 	padding-right: 15px;
+
 }
 
 #search input{
 	padding: 5px;
-	margin-right: -5px;
+	border: 1px solid #a9a9a9;
 }
 
 #search button{
 	padding: 0px;
+	border: 1px solid #a9a9a9;
+	border-left: none;
 }
 
 #search button img{
 	height: 30px;
+}
+
+#result-search{
+	display: none;
+	border-left: 1px solid #a9a9a9;
+	border-right: 1px solid #a9a9a9;
+	border-bottom: 1px solid #a9a9a9;
+	width: 182px;
+	height: auto;
+	background-color: white;
+	padding: 0;
+	position: absolute;
+	margin-top: 32px;
+}
+
+#result-search li{
+	list-style: none;
+}
+
+#result-search a{
+	text-decoration: none;
+	font: 14px sans-serif;
+	padding: 5px;
+	display: block;
+	color: black;
+	padding: 5px;
+}
+
+#result-search a:hover{
+	background-color: #f1f2f2;
+	text-decoration: none;
+}
+
+@media screen and (max-device-width: 768px){
+	#top{
+		background: none;
+	}
 }
 
 @media screen and (max-device-width: 680px){

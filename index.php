@@ -1,0 +1,160 @@
+<?php
+    include("functions/functions.php");
+
+    header('Content-Type: text/html; charset=utf-8');
+    $search = clear_string($_GET["q"]);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My drugstore</title>
+    
+    <link rel="icon" type="image/png" href="img/icon.png">
+	<link rel="stylesheet" href="dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="fontAwesomeBootstrap/css/font-awesome.min.css">
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/shop-script.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<nav class="menu nav">
+				<button id="touch-menu">Меню</button>
+				<div id="menu_list">
+					<ul>
+						<hr>
+						<li><a href="#main">Главная</a></li>
+						<hr>
+						<li><a href="#about">О компании</a></li>
+						<hr>
+						<li><a href="#delivery">Доставка</a></li>
+						<hr>
+						<li><a href="#pay">Способ оплаты</a></li>
+						<hr>
+						<li><a href="#contacts">Контакты</a></li>
+						<hr>
+						<li><a href="#reviews">Отзывы</a></li>
+					</ul>
+				</div>
+			</nav>
+			<div><img id="logo" src="img/logo2.png" alt=""></div>
+			<div id="main" class="container">
+				<div class="catalog col-xs-4 col-sm-4 col-md-4 col-lg-4">
+					<div id="title">
+						<a href="medicine.php">Каталог</a> 
+						<button id="catalog" class="btn">
+							<span class="pull-right glyphicon glyphicon-align-justify"></span>
+						</button>
+					</div>
+					<ul class="btn-group-vertical">
+						<button type="button" class="btn"><a href="medicine.php#medications">Лекарства</a></button>
+						<button type="button" class="btn"><a href="medicine.php#vitamin">Витамины</a></button>
+						<button type="button" class="btn"><a href="medicine.php#gestation">Беременность</a></button>
+						<button type="button" class="btn"><a href="medicine.php#doppelherz">Doppelherz</a></button>
+						<button type="button" class="btn" style="border-bottom:none;"><a href="medicine.php#for_kids">Для детей</a></button>
+					</ul>
+				</div>
+				<div id="myCarousel" class="carousel slide pull-right col-xs-8 col-sm-8 col-md-8 col-lg-8" data-ride="carousel">
+					<!--Indicators-->
+					<ol class="carousel-indicators">
+						<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+						<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+						<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+					</ol>
+
+					<!--Wrapperfor slides-->
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="img/1.jpeg" alt="1">
+						</div>
+						<div class="carousle item">
+							<img src="img/2.jpeg" alt="">
+						</div>
+						<div class="carousel item">
+							<img src="img/3.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div id="about" class="container">
+				<h1>О компании</h1>
+				<div>
+					<p>
+						Наша компания занимается доставкой лекарств из Германии в Москву и по всей России. На сегодняшний день ни для кого не секрет что Немецкая фармацевтика одна из самых лучших в мире. Покупая лекарство в Немецкой аптеке, вы можетe быть уверены, что приобретаете оригинальный препарат со всеми необходимыми документами от производителя. 
+					</p>
+					<p>
+						К сожалению, на территории Российской Федерации очень сложно найти качественные медицинские препараты. Использование таких лекарств можно нанести большой вред своему здоровью. Поэтому мы хотим помочь людям купить оригинальные лекарства Немецкого производства. <br> В нашем интернет магазине Вы можете приобрести лекарства из Германии без полной предварительной оплаты для Москвы и по полной предварительной оплате для регионов, наши опытные поставщики доставят в максимально короткие сроки по всей России, Украине, Казахстан и Белоруссии так же странам СНГ в зависимости от срочности и отдалённости региона. 
+					</p>
+					<p>
+						Чтобы приобрести лекарство Вам достаточно позвонить или написать нашему представителю в Москве или Германии, и заказать нужный Вам препарат. Будьте здоровы!
+					</p>
+					<img src="img/about.jpeg" alt="" class="col-xs-12 col-sm-12">
+				</div>
+			</div>
+			<hr>
+			<div id="delivery" class="container">
+				<h1>Доставка</h1>
+				<div>
+					<h3>ДОСТАВКА ЛЕКАРСТВ ИЗ ГЕРМАНИИ</h2>
+					<h4>Почтовая доставка из Германии</h3>
+					<div>
+						<p>Посылка находится в пути 10-14 дней (Россия), в зависимости от страны.</p> 
+						<p>Но почта оставляет за собой право везти посылку из Германии <span class="text-danger">2-4 недели!</span> Обратите на это внимание, хотя таких случаев у нас пока не было.</p>
+						<p>-посылка весом до 500 гр стоит 6,20€</p>
+						<p>-посылка весом до 1 кг стоит 9,50€</p>
+						<p>-посылка весом до 2 кг стоит 19,50€</p>
+						<p class="text-info">(предоставляется чек с почты):</p>
+						<p class="text-primary"><strong>Постоянным клиентам действуют скидки.</strong></p>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div id="pay" class="container">
+				<h1>Способ оплаты</h1>
+				<h3>СПОСОБЫ ОПЛАТЫ LEKARSTVONLINE.RU</h3>
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<img class="col-xs-3 col-sm-3 col-md-3 col-lg-3" src="img/visa-mastercard.jpg" alt="">
+					</div>
+					<div>
+						<strong>Банковский перевод</strong>
+						<ul>
+							<li>Visa</li>
+							<li>MasterCard</li>
+						</ul>
+						<p>
+							Для удобства наших клиентов, а так же для ускорения скорости обработки заказов мы предлагаем прямой перевод на наш банковский счет через международную платёжную систему Visa или MasterCard. Вы можете в любое время перечислить нам на карту или на расчетный счет прямым переводом указав в примечании номер заказа и наименование товара. В случае оплаты покупки прямым переводом денежные средства поступают на наш счет в тот же день и сразу же начинается обработка заказа,в противном случае для обработки заказа придется ждать поступления средств на счет.
+						</p>
+					</div>
+			</div>
+			<hr>
+			<div id="contacts" class="container">
+				<h1>Контакты</h1>
+				<div>
+					<address>
+						<strong>Delphin-Apotheke</strong><br>
+						Illungshofstr. 21<br>
+						80807 München<br>
+						Phone:<span style="padding-left: 10px"></span> +49 1578 3175411 <img src="img/logo-whatsapp.png" alt="">
+					</address>
+					<div>
+						Мы работаем со многими аптеками по Германии, в таких городах как Дюссельдорф, Кёльн, Бонн, Кобленс, Аугсбург. Отправка осуществляется ТОЛЬКО из Германии и в этом наше преимущество!
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div id="reviews" class="container">
+				<h1>Отзывы</h1>
+			</div>
+		</div>
+	</div>
+	<div id="top"><span class="glyphicon glyphicon-circle-arrow-up fa-2x"></span></div>
+</body>
+</html>

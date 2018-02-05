@@ -144,6 +144,25 @@ address{
 	text-align: center;
 }
 
+.active{
+	color: #d9534f!important;
+}
+
+.cart_count{
+	width: 35%;
+	text-align: center;
+	margin: 5px 5px;
+	border: 1px solid #0d316b;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+.count_deduct, .count_addition{
+	cursor: pointer;
+}
+
 /*	id	*/
 
 #top{
@@ -345,6 +364,78 @@ address{
 #result-search a:hover{
 	background-color: #f1f2f2;
 	text-decoration: none;
+}
+
+#cart{
+	float: right;
+	padding: 10px 15px;
+	display: inline-block;
+}
+
+#cart a{
+	font-size: 14px;
+	font-weight: bold;
+	color: #fcfffd;
+	text-decoration: none;
+}
+
+#cart a:hover{
+	background-color: #0d316b;
+}
+
+#block_step{
+
+}
+
+#step_name{
+
+}
+
+#step_name ul{
+	
+}
+
+#step_name ul li{
+	list-style: none;
+	display: inline-block;
+	margin-right: 25px;
+}
+
+#step_name ul li a{
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 14px;
+	color: #0d316b;
+}
+
+#step_name ul li a:hover{
+	color: #d9534f;
+}
+
+#cart_header{
+	padding-left: 40px;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#cart_header p{
+	display: inline-block;
+}
+
+#cart_header a{
+	text-decoration: none;
+}
+
+#cart_header a:hover{
+	background-color: inherit;
+}
+
+#cart_header a button{
+	float: right;
+	margin-right: 15px;
+	font-weight: bold;
+	font-size: 14px;
+	color: #fcfffd;
 }
 
 @media screen and (max-device-width: 768px){

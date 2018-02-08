@@ -373,26 +373,15 @@ address{
 }
 
 #cart a{
+	text-decoration: none;	
 	font-size: 14px;
 	font-weight: bold;
 	color: #fcfffd;
-	text-decoration: none;
 }
 
 #cart a:hover{
 	background-color: #0d316b;
-}
-
-#block_step{
-
-}
-
-#step_name{
-
-}
-
-#step_name ul{
-	
+	color: #d9534f;
 }
 
 #step_name ul li{

@@ -1,10 +1,11 @@
 <?php
-	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		define('myeshop', true);
-		include("db_connect");
-		include("../functions/functions.php");
+    header('Content-Type: text/html; charset=utf-8');
 
-		$result = mysql_qeuery("SELECT * FROM cart, table_products WHERE cart.cart_ip = '{$_SERVER['REMOTE_ADDR']}' AND table_products.products_id = cart.cart_id_product", $link);
+	if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+		include("db_connect.php");
+
+		$result = mysql_query("SELECT * FROM cart, table_products WHERE cart.cart_ip = '{$_SERVER['REMOTE_ADDR']}' AND table_products.products_id = cart.cart_id_productS", $link);
 		if(mysql_num_rows($result) > 0){
 			$row = mysql_fetch_array($result);
 
@@ -22,17 +23,11 @@
 			{
 			    $str=" тов";
 			}
-  
-     		echo '<span class="glyphicon glyphicon-shopping-cart"></span><span>'.$count.$str.'</span> на сумму <span>'.$int.'</span> &#8364;';
-}
-else
-{
- 
-     echo '0';
- 
-}
-}
-?>
+     		echo '<span class="glyphicon glyphicon-shopping-cart"></span><span> '.$count.$str.'</span> на сумму '.$int.' &#8364;';
+		}
+		else
+		{
+		     echo '0';
 		}
 	}
 ?>

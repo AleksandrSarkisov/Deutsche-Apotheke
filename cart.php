@@ -217,11 +217,15 @@
                     <hr>
                 ';
 
+ 
                 $result = mysql_query("SELECT * FROM cart, table_products WHERE cart.cart_ip = '{$_SERVER['REMOTE_ADDR']}' AND table_products.products_id = cart.cart_id_products",$link);
 
                 if(mysql_num_rows($result) > 0 )
                 {
                     $row = mysql_fetch_array($result);
+                    echo'
+                        <div class="block_products" style="justify-content: flex-start;">
+                    ';
 
                     do{
                         $int = $row["cart_price"] * $row["cart_count"];
@@ -234,8 +238,12 @@
                                     <strong class="product_title">'.$row["ger_title"].'</strong>
                                     <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                     <div class="product_count_price">
-                                        <span>-</span><input type="text" maxlenght="3" value="'.$row["cart_count"].'"><span>+</span>
-                                        <strong class="price">'.$int.'&#8364;</strong>
+                                        <div class="count">
+                                            <span cart_id="'.$row["cart_id"].'" class="count_deduct">-</span>
+                                            <input type="text" id="input_id'.$row["cart_id"].'" cart_id="'.$row["cart_id"].'" class="cart_count" maxlength="3" value="'.$row["cart_count"].'" pattern="[0-9]{3}">
+                                            <span cart_id="'.$row["cart_id"].'" class="count_addition">+</span>
+                                        </div>
+                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.$row["cart_price"].'">'.$int.'&#8364;</strong>
                                     </div>
                                     <div id="delete_product">
                                         <a href="cart.php?id='.$row["cart_id"].'&action=delete"><button type="button" class="btn btn-danger">Удалить</button></a>
@@ -250,8 +258,15 @@
                                     <strong class="product_title">'.$row["ger_title"].'</strong>
                                     <br>
                                     <div class="product_count_price">
-                                        <span>-</span><input type="text" maxlenght="3" value="'.$row["cart_count"].'"><span>+</span>
-                                        <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                        <div class="count">
+                                            <span cart_id="'.$row["cart_id"].'" class="count_deduct">-</span>
+                                            <input type="text" id="input_id'.$row["cart_id"].'" cart_id="'.$row["cart_id"].'" class="cart_count" maxlength="3" value="'.$row["cart_count"].'" pattern="[0-9]{3}">
+                                            <span cart_id="'.$row["cart_id"].'" class="count_addition">+</span>
+                                        </div>
+                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.$row["cart_price"].'">'.$int.'&#8364;</strong>
+                                    </div>
+                                     <div id="delete_product">
+                                        <a href="cart.php?id='.$row["cart_id"].'&action=delete"><button type="button" class="btn btn-danger">Удалить</button></a>
                                     </div>
                                 </div>
                             ';
@@ -259,14 +274,15 @@
                     }
                     while($row = mysql_fetch_array($result));
                     echo'
-                        <div id="result">
+                        </div>
+                        <div id="result_price">
                             <h2> Итог: <strong>'.$all_price.'&#8364;</strong></h2>
                             <a href="cart.php?action=confirm"><button type="button" class="btn btn-success">Далее</button></a>
                         </div>
                     ';
                 }
                 else{
-                    echo '<h2>Корзина пуста</h2>';
+                    echo '<div id="empty_cart"><h2>Корзина пуста</h2></div>';
                 }
 
                 break;

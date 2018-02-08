@@ -6,6 +6,8 @@ var top_show = 150;
 var delay = 1000;
 
 $(document).ready(function(){
+	loadcart();
+
 	$(window).scroll(function(){
 		if ($(this).scrollTop() > top_show)
 			$("#top").fadeIn();
@@ -124,9 +126,9 @@ $(document).ready(function(){
 				// Переменная с ценой продукта
 				var priceproduct = $("#product"+cart_id).attr("price");
 				// Цену умножаем на количество
-				result_total = Number(priceproduct, 2, '.', '') * Number(data, 2, '.', '');
+				result_total = Number(priceproduct) * Number(data);
 
-				$("#product"+cart_id).html(result_total+"&#8364;");
+				$("#product"+cart_id).html(result_total.toFixed(2)+"&#8364;");
 
 				result_price();
 			}
@@ -149,9 +151,9 @@ $(document).ready(function(){
 				// Переменная с ценой продукта
 				var priceproduct = $("#product"+cart_id).attr("price");
 				// Цену умножаем на количество
-				result_total = Number(priceproduct, 2, '.', '') * Number(data, 2, '.', '');
+				result_total = Number(priceproduct) * Number(data);
 
-				$("#product"+cart_id).html(result_total+"&#8364;");
+				$("#product"+cart_id).html(result_total.toFixed(2) +"&#8364;");
 
 				result_price();
 			}
@@ -166,38 +168,38 @@ $(document).ready(function(){
 		(e.which > 34 && e.which < 38) || e.which == 39 || (e.which > 47 && e.which < 58) || 
 		(e.which > 95 && e.which < 105) || (e.ctrlKey === true && e.which == 65) || 
 		(e.ctrlKey === true && e.which == 67) && e.shiftKey === false){
-			
 			if(chr < '0' || chr > '9'){
 				return false;
 			}
-
-			var cart_id = $(this).attr("cart_id");
-			var incount = $("#input_id"+cart_id).val();
-
-			$.ajax({
-				type: "POST",
-				url: "/include/count_input.php",
-				data: "id="+cart_id+"&count="+incount,
-				dataType: "html",
-				cache: false,
-				success: function(data){
-					$("#input_id"+cart_id).val(data);
-					loadcart();
-
-					// Переменная с ценой продукта
-					var priceproduct = $("#product"+cart_id).attr("price");
-					// Цену умножаем на количество
-					result_total = Number(priceproduct, 2, '.', '') * Number(data, 2, '.', '');
-
-					$("#product"+cart_id).html(result_total+"&#8364;");
-
-					result_price();
-				}
-			});
+			return;			
 		}
 		else{
 			e.preventDefault();			
 		}
+		
+		var cart_id = $(this).attr("cart_id");
+		var incount = $("#input_id"+cart_id).val();
+
+		$.ajax({
+			type: "POST",
+			url: "/include/count_input.php",
+			data: "id="+cart_id+"&count="+incount,
+			dataType: "html",
+			cache: false,
+			success: function(data){
+				$("#input_id"+cart_id).val(data);
+				loadcart();
+
+				// Переменная с ценой продукта
+				var priceproduct = $("#product"+cart_id).attr("price");
+				// Цену умножаем на количество
+				result_total = Number(priceproduct) * Number(data);
+
+				$("#product"+cart_id).html(result_total.toFixed(2)+"&#8364;");
+
+				result_price();
+			}
+		});
 	});
 
 	// event.type должен быть keypress
@@ -226,4 +228,19 @@ $(document).ready(function(){
 			}
 		});
 	}
+
+	$(".btn_cart button").click(function(){
+		var tid = $(this).attr("tid");
+
+		$.ajax({
+			type: "POST",
+			url: "/include/addtocart.php",
+			data: "id="+tid,
+			dataType: "html",
+			cache: false,
+			success: function(data){
+				loadcart();
+			}
+		});
+	});
 });

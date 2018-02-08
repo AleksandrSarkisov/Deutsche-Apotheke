@@ -1,5 +1,5 @@
 <?php
-if($_SERVER["REQUETS_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST"){
 	include ("db_connect.php");
 	include ("../functions/functions.php");
 

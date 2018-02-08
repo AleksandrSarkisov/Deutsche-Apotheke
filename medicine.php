@@ -76,10 +76,10 @@
                                                 <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -94,10 +94,10 @@
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -130,10 +130,10 @@
                                                 <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -148,10 +148,10 @@
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -183,10 +183,10 @@
                                                 <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -201,10 +201,10 @@
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -236,10 +236,10 @@
                                                 <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -254,10 +254,10 @@
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -289,10 +289,10 @@
                                                 <strong class="product_rus_title">'.$row["rus_title"].'</strong>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>
@@ -307,10 +307,10 @@
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
-                                                    <strong class="price">'.$row["product_price"].'&#8364;</strong>
+                                                    <strong class="price">'.$row["products_price"].'&#8364;</strong>
                                                 </div>
                                                 <div class="btn_cart">
-                                                    <button type="button" class="btn btn-primary btn-lg">
+                                                    <button type="button" class="btn btn-primary btn-lg" tid="'.$row["products_id"].'">
                                                         <span class="glyphicon glyphicon-shopping-cart"></span>&ensp;В корзину
                                                     </button>
                                                 </div>

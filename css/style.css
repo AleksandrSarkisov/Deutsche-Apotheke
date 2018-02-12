@@ -33,6 +33,7 @@ address{
 	background: #f4fff9;
 }
 
+
 .menu {
 	background-color: #0d316b;
 	border: 1px solid #0d316b;
@@ -113,12 +114,16 @@ address{
 	width: 178px;
 }
 
-.product_title{
-	text-align: center;
+.product a{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: #0d316b;
 }
 
-.product_rus_title{
-	text-align: center;
+.product a:hover{
+	background-color: inherit;
+	color: #2e92e8;
 }
 
 .product_count_price{
@@ -425,6 +430,78 @@ address{
 	font-weight: bold;
 	font-size: 14px;
 	color: #fcfffd;
+}
+
+#result_price{
+	display: inline-block;
+	float: right;
+	text-align: right;
+	padding: 0px 15px;
+}
+
+#result_price a{
+	width: 100%;
+}
+
+#result_price a button {
+	width: 70%;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#empty_cart{
+	text-align: center;
+}
+
+#view{
+}
+
+#view_product{
+	width: 100%;
+	height: 100%;
+}
+
+#view_product hr{
+	border-width: 1px;
+}
+
+#view_product img{
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+
+#view_product > div{
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: space-around;
+	float: right;
+	width: 75%;
+	height: 100%;
+}
+
+#view_title{
+	width: 100%;
+	display: inline-block;
+	padding: 0 10px;
+}
+
+#view_description{
+	width: 75%;
+	display: inline-block;
+	padding: 0 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#view_footer{
+	width: 75%;
+	padding: 0px 10px;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	font-size: 14px;
+	font-weight: bold;
 }
 
 @media screen and (max-device-width: 768px){

@@ -6,12 +6,13 @@
 		include("db_connect.php");
 
 		$result = mysql_query("SELECT * FROM cart, table_products WHERE cart.cart_ip = '{$_SERVER['REMOTE_ADDR']}' AND table_products.products_id = cart.cart_id_productS", $link);
+
 		if(mysql_num_rows($result) > 0){
 			$row = mysql_fetch_array($result);
 
 			do{
 				$count = $count + $row["cart_count"];
-				$int = $int + ($row["price"] * $row["cart_count"]);
+				$int = $int + ($row["products_price"] * $row["cart_count"]);
 			}
 			while($row = mysql_fetch_array($result));
 
@@ -23,7 +24,7 @@
 			{
 			    $str=" тов";
 			}
-     		echo '<span class="glyphicon glyphicon-shopping-cart"></span><span> '.$count.$str.'</span> на сумму '.$int.' &#8364;';
+     		echo '<span class="glyphicon glyphicon-shopping-cart"></span><span> В корзине '.$count.$str.'</span> на сумму '.number_format($int, 2, '.', ' ').' &#8364;';
 		}
 		else
 		{

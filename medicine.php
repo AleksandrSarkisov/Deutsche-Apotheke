@@ -72,8 +72,9 @@
                                         echo '
         									<div class="product">
         										<img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
-                                                <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'">
+                                                    <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                    <strong class="product_rus_title">'.$row["rus_title"].'</strong></a>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
                                                     <strong class="price">'.$row["products_price"].'&#8364;</strong>
@@ -90,7 +91,7 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'"><strong class="product_title">'.$row["ger_title"].'</strong></a>
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
@@ -126,8 +127,9 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
-                                                <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'">
+                                                    <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                    <strong class="product_rus_title">'.$row["rus_title"].'</strong></a>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
                                                     <strong class="price">'.$row["products_price"].'&#8364;</strong>
@@ -144,7 +146,7 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'"><strong class="product_title">'.$row["ger_title"].'</strong></a>
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
@@ -179,8 +181,9 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
-                                                <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'">
+                                                    <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                    <strong class="product_rus_title">'.$row["rus_title"].'</strong></a>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
                                                     <strong class="price">'.$row["products_price"].'&#8364;</strong>
@@ -197,7 +200,7 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'"><strong class="product_title">'.$row["ger_title"].'</strong></a>
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
@@ -232,8 +235,9 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
-                                                <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'">
+                                                    <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                    <strong class="product_rus_title">'.$row["rus_title"].'</strong></a>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
                                                     <strong class="price">'.$row["products_price"].'&#8364;</strong>
@@ -250,7 +254,7 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'"><strong class="product_title">'.$row["ger_title"].'</strong></a>
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
@@ -285,8 +289,9 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
-                                                <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'">
+                                                    <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                    <strong class="product_rus_title">'.$row["rus_title"].'</strong></a>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>
                                                     <strong class="price">'.$row["products_price"].'&#8364;</strong>
@@ -303,7 +308,7 @@
                                         echo '
                                             <div class="product">
                                                 <img src="catalog/'.$row["img"].'">
-                                                <strong class="product_title">'.$row["ger_title"].'</strong>
+                                                <a href="view_content.php?id='.$row["products_id"].'"><strong class="product_title">'.$row["ger_title"].'</strong></a>
                                                 <br>
                                                 <div class="product_count_price">
                                                     <strong class="count">'.$row["mini_description"].'</strong>

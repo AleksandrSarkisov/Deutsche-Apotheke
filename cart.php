@@ -106,15 +106,17 @@
                             echo '
                                 <div class="product">
                                     <img src="catalog/'.$row["img"].'">
-                                    <strong class="product_title">'.$row["ger_title"].'</strong>
-                                    <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                    <a href="view_content.php?id='.$row["products_id"].'">
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
+                                        <br>
+                                        <strong class="product_rus_title">'.$row["rus_title"].'</strong></a>
                                     <div class="product_count_price">
                                         <div class="count">
                                             <span cart_id="'.$row["cart_id"].'" class="count_deduct">-</span>
                                             <input type="text" id="input_id'.$row["cart_id"].'" cart_id="'.$row["cart_id"].'" class="cart_count" maxlength="3" value="'.$row["cart_count"].'" pattern="[0-9]{3}">
                                             <span cart_id="'.$row["cart_id"].'" class="count_addition">+</span>
                                         </div>
-                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.$row["cart_price"].'">'.$int.'&#8364;</strong>
+                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.number_format($row["cart_price"], 2, '.', ' ').'">'.$int.'&#8364;</strong>
                                     </div>
                                     <div id="delete_product">
                                         <a href="cart.php?id='.$row["cart_id"].'&action=delete"><button type="button" class="btn btn-danger">Удалить</button></a>
@@ -126,7 +128,7 @@
                             echo '
                                 <div class="product">
                                     <img src="catalog/'.$row["img"].'">
-                                    <strong class="product_title">'.$row["ger_title"].'</strong>
+                                    <a href="view_content.php?id='.$row["products_id"].'"><strong class="product_title">'.$row["ger_title"].'</strong></a>
                                     <br>
                                     <div class="product_count_price">
                                         <div class="count">
@@ -134,7 +136,7 @@
                                             <input type="text" id="input_id'.$row["cart_id"].'" cart_id="'.$row["cart_id"].'" class="cart_count" maxlength="3" value="'.$row["cart_count"].'" pattern="[0-9]{3}">
                                             <span cart_id="'.$row["cart_id"].'" class="count_addition">+</span>
                                         </div>
-                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.$row["cart_price"].'">'.$int.'&#8364;</strong>
+                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.number_format($row["cart_price"], 2, '.', ' ').'">'.$int.'&#8364;</strong>
                                     </div>
                                      <div id="delete_product">
                                         <a href="cart.php?id='.$row["cart_id"].'&action=delete"><button type="button" class="btn btn-danger">Удалить</button></a>
@@ -147,7 +149,7 @@
                     echo'
                         </div>
                         <div id="result_price">
-                            <h2> Итог: <strong>'.$all_price.'&#8364;</strong></h2>
+                            <h2> Итог: <strong>'.number_format($all_price, 2, '.', ' ').'&#8364;</strong></h2>
                             <a href="cart.php?action=confirm"><button type="button" class="btn btn-success">Далее</button></a>
                         </div>
                     ';
@@ -235,15 +237,16 @@
                             echo '
                                 <div class="product">
                                     <img src="catalog/'.$row["img"].'">
-                                    <strong class="product_title">'.$row["ger_title"].'</strong>
-                                    <strong class="product_rus_title">'.$row["rus_title"].'</strong>
+                                    <a href="view_content.php?id='.$row["products_id"].'">
+                                        <strong class="product_title">'.$row["ger_title"].'</strong>
+                                        <strong class="product_rus_title">'.$row["rus_title"].'</strong></a>
                                     <div class="product_count_price">
                                         <div class="count">
                                             <span cart_id="'.$row["cart_id"].'" class="count_deduct">-</span>
                                             <input type="text" id="input_id'.$row["cart_id"].'" cart_id="'.$row["cart_id"].'" class="cart_count" maxlength="3" value="'.$row["cart_count"].'" pattern="[0-9]{3}">
                                             <span cart_id="'.$row["cart_id"].'" class="count_addition">+</span>
                                         </div>
-                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.$row["cart_price"].'">'.$int.'&#8364;</strong>
+                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.number_format($row["cart_price"], 2, '.', ' ').'">'.$int.'&#8364;</strong>
                                     </div>
                                     <div id="delete_product">
                                         <a href="cart.php?id='.$row["cart_id"].'&action=delete"><button type="button" class="btn btn-danger">Удалить</button></a>
@@ -255,7 +258,7 @@
                             echo '
                                 <div class="product">
                                     <img src="catalog/'.$row["img"].'">
-                                    <strong class="product_title">'.$row["ger_title"].'</strong>
+                                    <a href="view_content.php?id='.$row["products_id"].'"><strong class="product_title">'.$row["ger_title"].'</strong></a>
                                     <br>
                                     <div class="product_count_price">
                                         <div class="count">
@@ -263,7 +266,7 @@
                                             <input type="text" id="input_id'.$row["cart_id"].'" cart_id="'.$row["cart_id"].'" class="cart_count" maxlength="3" value="'.$row["cart_count"].'" pattern="[0-9]{3}">
                                             <span cart_id="'.$row["cart_id"].'" class="count_addition">+</span>
                                         </div>
-                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.$row["cart_price"].'">'.$int.'&#8364;</strong>
+                                        <strong class="price" id="product'.$row["cart_id"].'" price="'.number_format($row["cart_price"], 2, '.', ' ').'">'.$int.'&#8364;</strong>
                                     </div>
                                      <div id="delete_product">
                                         <a href="cart.php?id='.$row["cart_id"].'&action=delete"><button type="button" class="btn btn-danger">Удалить</button></a>
@@ -276,7 +279,7 @@
                     echo'
                         </div>
                         <div id="result_price">
-                            <h2> Итог: <strong>'.$all_price.'&#8364;</strong></h2>
+                            <h2> Итог: <strong>'.number_format($all_price, 2, '.', ' ').'&#8364;</strong></h2>
                             <a href="cart.php?action=confirm"><button type="button" class="btn btn-success">Далее</button></a>
                         </div>
                     ';
